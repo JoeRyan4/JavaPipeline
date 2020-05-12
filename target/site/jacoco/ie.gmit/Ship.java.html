@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ship.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ship</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">Ship.java</span></div><h1>Ship.java</h1><pre class="source lang-java linenums">package ie.gmit;
+/*
+    Ship class
+    Joseph Ryan
+    G00337523
+ */
+public class Ship {
+    private String originPort;
+    private String date;
+    private String departureTime;
+    private String price;
+
+<span class="fc" id="L13">    public Ship() {</span>
+<span class="fc" id="L14">        this.originPort = &quot;&quot;;</span>
+<span class="fc" id="L15">        this.date = &quot;&quot;;</span>
+<span class="fc" id="L16">        this.departureTime = &quot;&quot;;</span>
+<span class="fc" id="L17">        this.price = &quot;&quot;;</span>
+<span class="fc" id="L18">    }</span>
+
+<span class="fc" id="L20">    public Ship(String originPort, String date, String departureTime, String price) {</span>
+<span class="pc bpc" id="L21" title="1 of 8 branches missed.">        if ((originPort.length() &lt; 3) || (!date.contains(&quot;/&quot;)) || (!departureTime.contains(&quot;:&quot;)) || (!price.contains(&quot;$&quot;))) {</span>
+<span class="fc" id="L22">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="nc" id="L24">            this.originPort = originPort;</span>
+<span class="nc" id="L25">            this.date = date;</span>
+<span class="nc" id="L26">            this.departureTime = departureTime;</span>
+<span class="nc" id="L27">            this.price = price;</span>
+        }
+<span class="nc" id="L29">    }</span>
+
+<span class="fc" id="L31">    public String getOriginPort() { return originPort; }</span>
+
+    public void setOriginPort(String originPort) {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (originPort.length() &lt; 3) {</span>
+<span class="fc" id="L35">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L37">            this.originPort = originPort;</span>
+        }
+<span class="fc" id="L39">    }</span>
+
+<span class="fc" id="L41">    public String getDate() { return date; }</span>
+
+    public void setDate(String date) {
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!date.contains(&quot;/&quot;)) {</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L47">            this.date = date;</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+<span class="fc" id="L51">    public String getDepartureTime() { return departureTime; }</span>
+
+    public void setDepartureTime(String departureTime) {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (!departureTime.contains(&quot;:&quot;)) {</span>
+<span class="fc" id="L55">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L57">            this.departureTime = departureTime;</span>
+        }
+<span class="fc" id="L59">    }</span>
+
+<span class="fc" id="L61">    public String getPrice() { return price; }</span>
+
+    public void setPrice(String price) {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (!price.contains(&quot;$&quot;)) {</span>
+<span class="fc" id="L65">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L67">            this.price = price;</span>
+        }
+<span class="fc" id="L69">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
