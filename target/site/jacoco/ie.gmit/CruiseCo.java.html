@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CruiseCo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CruiseCo</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">CruiseCo.java</span></div><h1>CruiseCo.java</h1><pre class="source lang-java linenums">package ie.gmit;
+
+import java.util.ArrayList;
+
+public class CruiseCo {
+    private String name; // Name of the cruises
+<span class="fc" id="L7">    private ArrayList&lt;Ship&gt; ships = new ArrayList&lt;Ship&gt;(); // Information about all of the cruises</span>
+<span class="fc" id="L8">    private ArrayList&lt;Ship&gt; matchingShips = new ArrayList&lt;Ship&gt;(); // Has all the ships from the function findShips()</span>
+
+    // Default Constructor
+    public CruiseCo()
+<span class="fc" id="L12">    {</span>
+<span class="fc" id="L13">        this.name = &quot;Royal Carribean&quot;;</span>
+<span class="fc" id="L14">    }</span>
+    // Getter functions--------------------
+    public String getName()
+    {
+<span class="fc" id="L18">        return name;</span>
+    }
+
+    public Ship getShip()
+    {
+<span class="nc" id="L23">        int shipNumber = 0;</span>
+<span class="nc" id="L24">        return ships.get(shipNumber);</span>
+    }
+
+    public ArrayList&lt;Ship&gt; getMatchingShips()
+    {
+<span class="nc" id="L29">        return matchingShips;</span>
+    }
+
+    public int getNumberOfShips()
+    {
+<span class="fc" id="L34">        return ships.size();</span>
+    }
+
+    // Setter Functions---------------------
+
+
+    // Class Methods------------------------
+
+    // Cancels a ticket
+    public void cancel(Ticket t)
+    {
+<span class="nc" id="L45">        int shipNum = Integer.parseInt(t.getMyShip() );</span>
+<span class="nc" id="L46">        System.out.println(t.getMyPassenger() + &quot; has been refunded $&quot;</span>
+<span class="nc" id="L47">                + t.getTicketPrice() );</span>
+<span class="nc" id="L48">        ships.get(shipNum).remove(t);</span>
+<span class="nc" id="L49">    }</span>
+
+    public void issueRefund(Ticket t)
+    {
+<span class="nc" id="L53">        System.out.println(t.getMyPassenger()</span>
+<span class="nc" id="L54">                + &quot; has been refunded $&quot; + t.getTicketPrice() );</span>
+<span class="nc" id="L55">    }</span>
+
+    // Shows all the current ships and their information for this cruises
+    public void showShips()
+    {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">        for (int i = 0; i &lt; ships.size(); i++)</span>
+        {
+<span class="nc" id="L62">            System.out.print(getName() + &quot; &quot; + ships.get(i).getShipNumber()</span>
+<span class="nc" id="L63">                    + &quot; &quot;+ ships.get(i).getDate() + &quot; &quot;);</span>
+<span class="nc" id="L64">            System.out.printf(&quot;%.02f&quot;, ships.get(i).getDepartureTime() );</span>
+<span class="nc" id="L65">            System.out.print( &quot; from &quot; + ships.get(i).getOrigin() + &quot; to &quot;</span>
+<span class="nc" id="L66">                    + ships.get(i).getDestination() + &quot; ticket cost €&quot; + ships.get(i).getCost() );</span>
+<span class="nc" id="L67">            System.out.println();</span>
+        }
+<span class="nc" id="L69">    }</span>
+
+    // Finds all ships for a 4 hour departure window
+    public ArrayList&lt;Ship&gt; findShips(String date, double time, String origin)
+    {
+<span class="nc" id="L74">        matchingShips.clear();</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        for (int i = 0; i &lt; ships.size(); i++)</span>
+        {
+<span class="nc bnc" id="L77" title="All 2 branches missed.">            if (ships.get(i).matches(date, time, origin) )</span>
+            {
+<span class="nc" id="L79">                matchingShips.add(ships.get(i) );</span>
+            }
+        }
+
+<span class="nc" id="L83">        return matchingShips;</span>
+    }
+
+    // Shows all the matching ships that the passenger requested
+    public void showMatchingShips()
+    {
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        for (int i = 0; i &lt; matchingShips.size(); i++)</span>
+        {
+<span class="nc" id="L91">            System.out.print(getName() + &quot; &quot; + matchingShips.get(i).getShipNumber()</span>
+<span class="nc" id="L92">                    + &quot; &quot; + matchingShips.get(i).getDate() + &quot; &quot;);</span>
+<span class="nc" id="L93">            System.out.printf(&quot;%.2f&quot;, matchingShips.get(i).getDepartureTime() );</span>
+<span class="nc" id="L94">            System.out.print(&quot; from &quot; + matchingShips.get(i).getOrigin()</span>
+<span class="nc" id="L95">                    + &quot; to &quot; + matchingShips.get(i).getDestination()</span>
+<span class="nc" id="L96">                    + &quot; ticket cost €&quot; + matchingShips.get(i).getCost() );</span>
+<span class="nc" id="L97">            System.out.println();</span>
+<span class="nc" id="L98">            System.out.println(&quot;Here are the following matches on this particular day.  &quot;);  //////</span>
+<span class="nc" id="L99">            System.out.println();</span>
+        }
+<span class="nc" id="L101">    }</span>
+
+
+    public Ticket book(Passenger p, Ship s)
+    {
+<span class="nc" id="L106">        Ticket t = new Ticket();</span>
+<span class="nc" id="L107">        s.addTicket(t);</span>
+<span class="nc" id="L108">        p.bookShip(p.getTitle(), p.getFirstName(), p.getLastName(), name, s);</span>
+<span class="nc" id="L109">        return t;</span>
+    }
+
+    public double cost(Ship f)
+    {
+<span class="nc" id="L114">        return f.getCost();</span>
+    }
+
+
+    public void createFlight(double time, int numSeats, String from, String to)
+    {
+<span class="nc" id="L120">        Ship ship = new Ship(time, numSeats, from, to);</span>
+<span class="nc" id="L121">        ships.add(ship);</span>
+<span class="nc" id="L122">    }</span>
+
+    public void createShip(double cagTime, int seats, String cagliari, String piraeus) {
+<span class="nc" id="L125">    }</span>
+
+    public void setName(String royal_carribean) {
+<span class="fc" id="L128">    }</span>
+
+    public void findFlights(String date, double time, String from) {
+<span class="nc" id="L131">    }</span>
+
+    public void showMatchingFlights() {
+<span class="nc" id="L134">    }</span>
+
+    public void setNumberOfShips(int i) {
+<span class="fc" id="L137">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
