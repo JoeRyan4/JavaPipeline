@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Passenger.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Passenger</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">Passenger.java</span></div><h1>Passenger.java</h1><pre class="source lang-java linenums">package ie.gmit;
+/*
+    ie.gmit.Passenger class
+    Ciaran Walsh
+    G00321395
+ */
+import java.util.ArrayList;
+
+public class Passenger {
+    private String title, firstName, lastName, DOB,
+            address, postCode, region, nationality, phone, email, passportNo, medic, allergy;
+<span class="fc" id="L12">    private ArrayList&lt;Ticket&gt; myTickets = new ArrayList&lt;Ticket&gt;();</span>
+    private int numberOfTickets;
+
+    // Default Constructor
+    public Passenger(String title, String firstName, String lastName)
+<span class="fc" id="L17">    {</span>
+<span class="fc" id="L18">        this.title = title;</span>
+<span class="fc" id="L19">        this.firstName = firstName;</span>
+<span class="fc" id="L20">        this.lastName = lastName;</span>
+<span class="fc" id="L21">        nationality = &quot;&quot;;</span>
+<span class="fc" id="L22">        DOB = &quot;&quot;;</span>
+<span class="fc" id="L23">        postCode = &quot;&quot;;</span>
+<span class="fc" id="L24">        address = &quot;&quot;;</span>
+<span class="fc" id="L25">        region = &quot;&quot;;</span>
+<span class="fc" id="L26">        phone = &quot;&quot;;</span>
+<span class="fc" id="L27">        email = &quot;&quot;;</span>
+<span class="fc" id="L28">        passportNo = &quot;&quot;;</span>
+<span class="fc" id="L29">        medic = &quot;&quot;;</span>
+<span class="fc" id="L30">        allergy = &quot;&quot;;</span>
+<span class="fc" id="L31">    }</span>
+
+    // Getter Functions-------------------------------
+<span class="fc" id="L34">    public String getTitle() { return title; }</span>
+
+    public String getFirstName()
+    {
+<span class="fc" id="L38">        return firstName;</span>
+    }
+
+    public String getLastName()
+    {
+<span class="fc" id="L43">        return lastName;</span>
+    }
+
+    public String getNationality()
+    {
+<span class="nc" id="L48">        return nationality;</span>
+    }
+
+    public String getDOB()
+    {
+<span class="nc" id="L53">        return DOB;</span>
+    }
+
+    public String getAddress()
+    {
+<span class="nc" id="L58">        return address;</span>
+    }
+
+    public String getRegion()
+    {
+<span class="nc" id="L63">        return region;</span>
+    }
+
+    public String getPostCode()
+    {
+<span class="nc" id="L68">        return postCode;</span>
+    }
+
+    public String getPhone()
+    {
+<span class="nc" id="L73">        return phone;</span>
+    }
+    public String getEmail()
+    {
+<span class="nc" id="L77">        return email;</span>
+    }
+
+    public String getPassportNo()
+    {
+<span class="nc" id="L82">        return passportNo;</span>
+    }
+    public String getMedic()
+    {
+<span class="nc" id="L86">        return medic;</span>
+    }
+
+    public String getAllergy()
+    {
+<span class="nc" id="L91">        return allergy;</span>
+    }
+    public int getNumberOfTickets()
+    {
+<span class="nc" id="L95">        return numberOfTickets;</span>
+    }
+
+    public Ticket getTicket(int index)
+    {
+<span class="nc" id="L100">        return myTickets.get(index - 1);</span>
+    }
+
+    // Setter Functions------------------------------
+    public void setNationality(String n)
+    {
+<span class="nc" id="L106">        nationality = n;</span>
+<span class="nc" id="L107">    }</span>
+
+    public void setDOB(String d)
+    {
+<span class="nc" id="L111">        DOB = d;</span>
+<span class="nc" id="L112">    }</span>
+
+    public void setAddress(String a)
+    {
+<span class="nc" id="L116">        address = a;</span>
+<span class="nc" id="L117">    }</span>
+
+    public void setRegion(String r)
+    {
+<span class="nc" id="L121">        region = r;</span>
+<span class="nc" id="L122">    }</span>
+
+    public void setPostCode(String c)
+    {
+<span class="nc" id="L126">        postCode = c;</span>
+<span class="nc" id="L127">    }</span>
+
+    public void setPhone(String p)
+    {
+<span class="nc" id="L131">        phone = p;</span>
+<span class="nc" id="L132">    }</span>
+    public void setEmail(String e)
+    {
+<span class="nc" id="L135">        email = e;</span>
+<span class="nc" id="L136">    }</span>
+    public void setPassportNo(String l)
+    {
+<span class="nc" id="L139">        passportNo = l;</span>
+<span class="nc" id="L140">    }</span>
+    public void setMedic(String j)
+    {
+<span class="nc" id="L143">        medic = j;</span>
+<span class="nc" id="L144">    }</span>
+    public void setAllergy(String h)
+    {
+<span class="nc" id="L147">        allergy = h;</span>
+<span class="nc" id="L148">    }</span>
+    // Class Methods------------------------------------------------------------------------
+
+    // Shows all tickets a passenger has
+    public void showTickets()
+    {
+<span class="nc bnc" id="L154" title="All 2 branches missed.">        for (int i = 0; i &lt; myTickets.size(); i++)</span>
+        {
+<span class="nc" id="L156">            System.out.print( (i + 1) + &quot; &quot; + myTickets.get(i).getMyPassenger()</span>
+<span class="nc" id="L157">                    + &quot; booked on &quot; + myTickets.get(i).getMyCruiseCo()</span>
+<span class="nc" id="L158">                    + &quot;, Cruise number &quot;+ myTickets.get(i).getMyShip()</span>
+<span class="nc" id="L159">                    + &quot; on &quot; + myTickets.get(i).getMyDate() + &quot; at &quot;);</span>
+<span class="nc" id="L160">            System.out.printf(&quot;%.02f&quot;, myTickets.get(i).getMyTicketTime() );</span>
+<span class="nc" id="L161">            System.out.print(&quot;, &quot; + myTickets.get(i).getMyShipDestination()</span>
+<span class="nc" id="L162">                    + &quot; cost $&quot; + myTickets.get(i).getTicketPrice() );</span>
+<span class="nc" id="L163">            System.out.println();</span>
+        }
+<span class="nc" id="L165">    }</span>
+
+    // Cancels the passenger's ticket t
+    public void cancel(Ticket t)
+    {
+<span class="nc bnc" id="L170" title="All 2 branches missed.">        for (int i = 0; i &lt; myTickets.size(); i++)</span>
+        {
+<span class="nc bnc" id="L172" title="All 2 branches missed.">            if (t.getTicketNumber() == myTickets.get(i).getTicketNumber())</span>
+            {
+<span class="nc" id="L174">                myTickets.get(i).cancel();</span>
+<span class="nc" id="L175">                myTickets.remove(i);</span>
+            }
+        }
+<span class="nc" id="L178">        numberOfTickets--;</span>
+<span class="nc" id="L179">    }</span>
+
+    /* Finds all Boats for an Cruise Company on a particular date.
+     */
+    public ArrayList&lt;Ship&gt; findShips(CruiseCo a, String date, double time, String from)
+    {
+<span class="nc" id="L185">        ArrayList&lt;Ship&gt; matchingFlights = new ArrayList&lt;Ship&gt;();</span>
+
+<span class="nc" id="L187">        a.findFlights(date, time, from);</span>
+
+<span class="nc" id="L189">        return matchingFlights;</span>
+    }
+
+    // Books a ticket for a particular boat (for the passenger)
+    public Ticket bookShip(String title, String firstName, String lastName, String boat, Ship f)
+    {
+
+<span class="nc" id="L196">        Ticket t = new Ticket(f.getCost(), f.getDepartureTime(), boat,</span>
+                (title + &quot; &quot; + firstName +  &quot; &quot; + lastName),
+<span class="nc" id="L198">                f.getShipNumber(), f.getDate(),&quot;from &quot;</span>
+<span class="nc" id="L199">                + f.getOrigin() + &quot; to &quot; + f.getDestination() );</span>
+
+<span class="nc" id="L201">        f.addTicket(t);</span>
+<span class="nc" id="L202">        myTickets.add(t);</span>
+<span class="nc" id="L203">        numberOfTickets++;</span>
+
+<span class="nc" id="L205">        return t;</span>
+    }
+
+    // Reports where the passenger holds a particular ticket
+    public boolean holdsTicket(Ticket t)
+    {
+<span class="nc bnc" id="L211" title="All 2 branches missed.">        for (int i = 0; i &lt; myTickets.size(); i++)</span>
+        {
+<span class="nc bnc" id="L213" title="All 2 branches missed.">            if (t.getTicketNumber() == myTickets.get(i).getTicketNumber() )</span>
+<span class="nc" id="L214">                return true;</span>
+        }
+<span class="nc" id="L216">        return false;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L220">        this.title = title;</span>
+<span class="fc" id="L221">    }</span>
+
+    public void setLastName(String lastName) {
+<span class="fc" id="L224">        this.lastName = lastName;</span>
+<span class="fc" id="L225">    }</span>
+
+    public void setFirstName(String firstName) {
+<span class="fc" id="L228">        this.firstName = firstName;</span>
+<span class="fc" id="L229">    }</span>
+
+    public void setTitle() {
+<span class="nc" id="L232">        setTitle ();</span>
+<span class="nc" id="L233">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
