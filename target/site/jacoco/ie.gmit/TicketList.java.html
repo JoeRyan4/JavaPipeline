@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TicketList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tickets</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">TicketList.java</span></div><h1>TicketList.java</h1><pre class="source lang-java linenums">package ie.gmit;
+/*
+    Ticket class
+    Joseph Ryan
+    G00337523
+ */
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+
+<span class="fc" id="L10">public class TicketList {</span>
+
+<span class="fc" id="L12">    ArrayList&lt;Ticket&gt; listOfDetails = new ArrayList&lt;Ticket&gt;();</span>
+
+    public void addTicket(Ticket newTicket){
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for(Ticket ticket : listOfDetails)</span>
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">            if(ticket.getPassenger().equals(newTicket.getPassenger()))</span>
+<span class="fc" id="L17">                throw new InvalidParameterException(&quot;Passenger Already Booked&quot;);</span>
+<span class="fc" id="L18">            listOfDetails.add(newTicket);</span>
+<span class="fc" id="L19">    }</span>
+
+
+    public Ticket findByPassenger(String passenger) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Ticket ticket : listOfDetails) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (ticket.getPassenger().equals(passenger)) {</span>
+<span class="fc" id="L25">                return ticket;</span>
+            }
+<span class="fc" id="L27">        }</span>
+<span class="fc" id="L28">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

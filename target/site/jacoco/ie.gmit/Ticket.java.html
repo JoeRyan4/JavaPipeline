@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ticket.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tickets</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">Ticket.java</span></div><h1>Ticket.java</h1><pre class="source lang-java linenums">package ie.gmit;
+/*
+    Ticket class
+    Joseph Ryan
+    G00337523
+ */
+public class Ticket {
+
+    private String cruiseCo;
+    private String passenger;
+    private String myDate;
+    private String destination;
+
+<span class="fc" id="L14">    public Ticket(){</span>
+<span class="fc" id="L15">        this.cruiseCo = &quot;&quot;;</span>
+<span class="fc" id="L16">        this.passenger = &quot;&quot;;</span>
+<span class="fc" id="L17">        this.myDate = &quot;&quot;;</span>
+<span class="fc" id="L18">        this.destination = &quot;&quot;;</span>
+<span class="fc" id="L19">    }</span>
+
+<span class="fc" id="L21">    public Ticket(String cruiseCo, String passenger, String myDate, String destination){</span>
+<span class="fc bfc" id="L22" title="All 8 branches covered.">        if((cruiseCo.length() &lt; 5) || (passenger.length() &lt; 1) || (!myDate.contains(&quot;/&quot;)) || (!destination.contains(&quot;C&quot;))){</span>
+<span class="fc" id="L23">            throw new IllegalArgumentException();</span>
+        }else {
+<span class="fc" id="L25">            this.cruiseCo = cruiseCo;</span>
+<span class="fc" id="L26">            this.passenger = passenger;</span>
+<span class="fc" id="L27">            this.myDate = myDate;</span>
+<span class="fc" id="L28">            this.destination = destination;</span>
+        }
+<span class="fc" id="L30">    }</span>
+
+<span class="fc" id="L32">    public String getCruiseCo() { return cruiseCo; }</span>
+
+    public void setCruiseCo(String cruiseCo) {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (cruiseCo.length() &lt; 5) {</span>
+<span class="fc" id="L36">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L38">            this.cruiseCo = cruiseCo;</span>
+        }
+<span class="fc" id="L40">    }</span>
+
+<span class="fc" id="L42">    public String getPassenger() { return passenger; }</span>
+
+    public void setPassenger(String passenger) {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (passenger.length() &lt; 3) {</span>
+<span class="fc" id="L46">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L48">            this.passenger = passenger;</span>
+        }
+<span class="fc" id="L50">    }</span>
+
+<span class="fc" id="L52">    public String getMyDate() { return myDate; }</span>
+
+    public void setMyDate(String myDate) {
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!myDate.contains(&quot;/&quot;)) {</span>
+<span class="fc" id="L56">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L58">            this.myDate = myDate;</span>
+        }
+<span class="fc" id="L60">    }</span>
+
+<span class="fc" id="L62">    public String getDestination() { return destination; }</span>
+
+    public void setDestination(String destination) {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (!destination.contains(&quot;C&quot;)) {</span>
+<span class="fc" id="L66">            throw new IllegalArgumentException();</span>
+        } else {
+<span class="fc" id="L68">            this.destination = destination;</span>
+        }
+<span class="fc" id="L70">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
